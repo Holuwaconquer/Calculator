@@ -5,6 +5,11 @@ body{
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%), url('pexels-jeshoots-com-147458-714699.jpg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    overflow-y: hidden;
 }
 .calContainer{
     background-color: hsl(0, 0%, 10%);
