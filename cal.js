@@ -5,7 +5,6 @@ const display = document.getElementById('display')
         const calContainer = document.querySelector('.calContainer')
         sunBtn.addEventListener('click', ()=> {
             calContainer.style.backgroundColor = 'white'
-            calContainer.style.boxShadow = '0px 0px 10px 5px rgb(224, 224, 224)'
             display.style.backgroundColor = 'white'
             display.style.color = 'black'
             sumdisplay.style.backgroundColor = 'white'
