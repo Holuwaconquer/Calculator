@@ -5,11 +5,14 @@ const display = document.getElementById('display')
         const calContainer = document.querySelector('.calContainer')
         sunBtn.addEventListener('click', ()=> {
             calContainer.style.backgroundColor = 'white'
+            calContainer.style.boxShadow = '0px 0px 10px 5px rgb(224, 224, 224)'
             display.style.backgroundColor = 'white'
             display.style.color = 'black'
             sumdisplay.style.backgroundColor = 'white'
             sumdisplay.style.color = 'black'
             document.getElementById('key').style.backgroundColor = "#f8f9fa"
+            document.querySelector('.theme').style.backgroundColor = 'hsl(0, 0%, 15%)'
+            document.querySelector('.theme').style.color = 'white'
             // document.getElementsByTagName('button').style.backgroundColor = "green"
 
         })
@@ -20,6 +23,8 @@ const display = document.getElementById('display')
             sumdisplay.style.backgroundColor = ''
             sumdisplay.style.color = ''
             document.getElementById('key').style.backgroundColor = ""
+            document.querySelector('.theme').style.backgroundColor = ''
+            document.querySelector('.theme').style.color = ''
         })
         const appendToDisplay = (val) =>{
             display.value += val;
