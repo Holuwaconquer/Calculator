@@ -54,14 +54,12 @@ let changeBtn = document.getElementById('changeBtn')
 let changeValue = document.querySelectorAll('.changeValue')
 let valueArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
 changeBtn.addEventListener('click', ()=>{
-    console.log(changeValue[0]);
-    
     changeValue[0].innerHTML = `<button class="changeValue">&xfr;<sup>3</sup></button>` 
-    changeValue[1].innerHTML = `<button><small>&yopf;&Sqrt;&xfr;</small></button>` 
+    changeValue[1].innerHTML = `<button><small>&Sqrt;&xfr;</small></button>` 
     changeValue[2].innerHTML = `<button><small>sin<sup><small>-1</small></sup></small></button>` 
     changeValue[3].innerHTML = `<button><small>cos<sup><small>-1</small></sup></small></button>` 
     changeValue[4].innerHTML = `<button><small>tan<sup><small>-1</small></sup></small></button>` 
-    changeValue[5].innerHTML = `<button>&frac12;</button>` 
+    changeValue[5].innerHTML = `<button><small>&frac12;</small></button>` 
     changeValue[6].innerHTML = `<button><small>e<sup>&xfr;</sup></small></button>` 
     changeValue[7].innerHTML = `<button><small>ln</small></button>` 
     changeValue[8].innerHTML = `<button><small>dms</small></button>` 
@@ -70,6 +68,9 @@ changeBtn.addEventListener('click', ()=>{
 
 sciFunc.addEventListener('click', ()=>{
     document.querySelector('.sciCal').classList.add("sciCalShow")
+})
+sciFunc2.addEventListener('click', ()=>{
+    document.querySelector('.sciCal').classList.remove("sciCalShow")
 })
 
 if ('serviceWorker' in navigator) {

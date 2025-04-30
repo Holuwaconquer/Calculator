@@ -103,7 +103,8 @@ button:active{
     grid-template-columns: repeat(5, 1fr) !important;
     grid-template-rows: auto;
     position: absolute;
-    left: 0;
+    /* left: 0; */
+    gap: 8px !important;
     transform: translateY(100%);
 }
 .sciCal button{
