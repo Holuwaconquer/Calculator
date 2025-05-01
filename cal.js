@@ -91,11 +91,11 @@ changeBtn.addEventListener('click', () => {
 });
 
 sciFunc.addEventListener('click', ()=>{
+    document.querySelector('.sciCal').classList.add("sciCalShow")
+})
+document.getElementById('sciFunc2').addEventListener('click', ()=>{
     document.querySelector('.sciCal').classList.toggle("sciCalShow")
 })
-// document.getElementById('sciFunc2').addEventListener('click', ()=>{
-//     document.querySelector('.sciCal').classList.toggle("sciCalShow")
-// })
 
 // function for square root
 const squareRoot = () =>{
