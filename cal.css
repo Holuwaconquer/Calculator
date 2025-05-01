@@ -115,10 +115,27 @@ button:active{
     font-size: 16px;
     font-weight: bold;
 }
+.sciCal button:hover{
+    background-color: hsl(0, 0%, 60%);
+    cursor: pointer;
+}
+.sciCal button:active{
+    background-color: hsl(0, 0%, 70%);
+}
 .num{
     background-color: hsl(0, 0%, 70%) !important;
 }
+.num:hover{
+    background-color: hsl(0, 0%, 20%) !important;
+}
+.num:active{
+    background-color: hsl(0, 0%, 40%) !important;
+}
 .sciCalShow{
     transform: translateY(0);
+    transition: all 0.2s linear;
+}
+.sciCalShow2{
+    transform: translateY(100%);
     transition: all 0.2s linear;
 }

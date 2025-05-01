@@ -36,11 +36,15 @@ const clearfun = ()=>{
     display.value = "";
 }
 const calculate =()=>{
-    try{
-        sumdisplay.value = eval(display.value)
-    }
-    catch{
-        sumdisplay.value = "Error"
+    if(display.value!=""){
+        try{
+            sumdisplay.value = eval(display.value)
+        }
+        catch{
+            sumdisplay.value = "Error"
+        }
+    }else{
+        sumdisplay.value = ""
     }
 }
 
@@ -53,25 +57,95 @@ let sciFunc = document.getElementById('sciFunc')
 let changeBtn = document.getElementById('changeBtn')
 let changeValue = document.querySelectorAll('.changeValue')
 let valueArr = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
-changeBtn.addEventListener('click', ()=>{
-    changeValue[0].innerHTML = `<button class="changeValue">&xfr;<sup>3</sup></button>` 
-    changeValue[1].innerHTML = `<button><small>&Sqrt;&xfr;</small></button>` 
-    changeValue[2].innerHTML = `<button><small>sin<sup><small>-1</small></sup></small></button>` 
-    changeValue[3].innerHTML = `<button><small>cos<sup><small>-1</small></sup></small></button>` 
-    changeValue[4].innerHTML = `<button><small>tan<sup><small>-1</small></sup></small></button>` 
-    changeValue[5].innerHTML = `<button><small>&frac12;</small></button>` 
-    changeValue[6].innerHTML = `<button><small>e<sup>&xfr;</sup></small></button>` 
-    changeValue[7].innerHTML = `<button><small>ln</small></button>` 
-    changeValue[8].innerHTML = `<button><small>dms</small></button>` 
-    changeValue[9].innerHTML = `<button><small>deg</small></button>` 
-})
+
+let originalContent = [];
+let newContent = [
+    `<button class="changeValue">&xfr;<sup>3</sup></button>`,
+    `<button><small>&Sqrt;&xfr;</small></button>`,
+    `<button><small>sin<sup><small>-1</small></sup></small></button>`,
+    `<button><small>cos<sup><small>-1</small></sup></small></button>`,
+    `<button><small>tan<sup><small>-1</small></sup></small></button>`,
+    `<button><small>&frac12;</small></button>`,
+    `<button><small>e<sup>&xfr;</sup></small></button>`,
+    `<button><small>ln</small></button>`,
+    `<button><small>dms</small></button>`,
+    `<button><small>deg</small></button>`
+  ];
+
+let isChanged = false;
+
+// Store original content
+changeValue.forEach((element, index) => {
+  originalContent.push(element.innerHTML);
+});
+
+changeBtn.addEventListener('click', () => {
+  changeValue.forEach((element, index) => {
+    if (!isChanged) {
+      element.innerHTML = newContent[index];
+    } else {
+      element.innerHTML = originalContent[index];
+    }
+  });
+  isChanged = !isChanged;
+});
 
 sciFunc.addEventListener('click', ()=>{
-    document.querySelector('.sciCal').classList.add("sciCalShow")
+    document.querySelector('.sciCal').classList.toggle("sciCalShow")
 })
-sciFunc2.addEventListener('click', ()=>{
-    document.querySelector('.sciCal').classList.remove("sciCalShow")
-})
+// document.getElementById('sciFunc2').addEventListener('click', ()=>{
+//     document.querySelector('.sciCal').classList.toggle("sciCalShow")
+// })
+
+// function for square root
+const squareRoot = () =>{
+    sumdisplay.value = Math.sqrt(display.value)
+}
+
+//function for logarithm
+const logarithm = () =>{
+    sumdisplay.value = Math.log(display.value)
+}
+
+//function for sin
+const sin = () =>{
+    sumdisplay.value = Math.sin(display.value)
+}
+
+//function for cos
+const cos = () =>{
+    sumdisplay.value = Math.cos(display.value)
+}
+//function for tan
+const tan = () =>{
+    sumdisplay.value = Math.tan(display.value)
+}
+
+// function for 10 raise to the power of value inputted
+const tenRaise = () =>{
+    sumdisplay.value = 10**(display.value)
+}
+// function for exponentiation
+const exponent = () =>{
+    sumdisplay.value = display.value**2
+}
+
+// function for factorial
+const factorial = () =>{
+    let result = 1
+    for(let i = 2; i <= display.value; i++){
+        result *= i
+    }
+    sumdisplay.value = result
+}
+
+
+
+
+
+
+
+
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
