@@ -1,7 +1,18 @@
 const display = document.getElementById('display')
 const sumdisplay = document.getElementById('displayy')
 const sunBtn = document.getElementById('sunBtn')
-const moonBtn = document.getElementById('moonBtn')
+// const moonBtn = document.getElementById('moonBtn')
+let showMenu = document.getElementById('showMenu')
+showMenu.addEventListener('click', ()=>{
+    document.querySelector('.sideNav').classList.toggle('showSideNav')
+})
+document.addEventListener('click', (e)=>{
+    if(!showMenu.contains(e.target) &&!document.querySelector('.sideNav').contains(e.target)){
+        document.querySelector('.sideNav').classList.remove('showSideNav')
+    }
+
+})
+
 const calContainer = document.querySelector('.calContainer')
 sunBtn.addEventListener('click', ()=> {
     calContainer.style.backgroundColor = 'white'
@@ -10,21 +21,21 @@ sunBtn.addEventListener('click', ()=> {
     sumdisplay.style.backgroundColor = 'white'
     sumdisplay.style.color = 'black'
     document.getElementById('key').style.backgroundColor = "#f8f9fa"
-    document.querySelector('.theme').style.backgroundColor = 'hsl(0, 0%, 15%)'
-    document.querySelector('.theme').style.color = 'white'
+    document.querySelector('.themeBtn').style.color = 'black'
+    sunBtn.style.color = "black"
     // document.getElementsByTagName('button').style.backgroundColor = "green"
 
 })
-moonBtn.addEventListener('click', ()=>{
-    calContainer.style.backgroundColor = ''
-    display.style.backgroundColor = ''
-    display.style.color = ''
-    sumdisplay.style.backgroundColor = ''
-    sumdisplay.style.color = ''
-    document.getElementById('key').style.backgroundColor = ""
-    document.querySelector('.theme').style.backgroundColor = ''
-    document.querySelector('.theme').style.color = ''
-})
+// moonBtn.addEventListener('click', ()=>{
+//     calContainer.style.backgroundColor = ''
+//     display.style.backgroundColor = ''
+//     display.style.color = ''
+//     sumdisplay.style.backgroundColor = ''
+//     sumdisplay.style.color = ''
+//     document.getElementById('key').style.backgroundColor = ""
+//     document.querySelector('.theme').style.backgroundColor = ''
+//     document.querySelector('.theme').style.color = ''
+// })
 const appendToDisplay = (val) =>{
     display.value += val;
 }
