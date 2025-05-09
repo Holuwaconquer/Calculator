@@ -103,9 +103,11 @@ changeBtn.addEventListener('click', () => {
 
 sciFunc.addEventListener('click', ()=>{
     document.querySelector('.sciCal').classList.add("sciCalShow")
+    document.getElementById('methodName').textContent = "Scientific"
 })
 document.getElementById('sciFunc2').addEventListener('click', ()=>{
     document.querySelector('.sciCal').classList.toggle("sciCalShow")
+    document.getElementById('methodName').textContent = "Standard"
 })
 
 // function for square root
